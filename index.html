@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeanK.no</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="LeanK.no Logo.png" alt="LeanK.no Logo" class="logo">
+        </div>
+        <nav>
+            <div>
+                <button>Archive <i class="fas fa-caret-down"></i></button>
+                <ul>
+                    <li onclick="openArchiveDialog()">Open...</li>
+                    <li onclick="createNewArchive()">New...</li>
+                    <li onclick="deleteArchive()">Delete...</li>
+                </ul>
+            </div>
+            <div>
+                <button>Document <i class="fas fa-caret-down"></i></button>
+                <ul>
+                    <li onclick="openDocument()">Open...</li>
+                    <li onclick="createNewDocument()">New...</li>
+                    <li onclick="deleteDocument()">Delete...</li>
+                </ul>
+            </div>
+            <div>
+                <button>Tools <i class="fas fa-caret-down"></i></button>
+                <ul>
+                    <!-- Add tool actions here -->
+                </ul>
+            </div>
+        </nav>
+        <div id="currentArchive">Archive open: <span id="archiveName">-None-</span></div>
+        <button id="darkModeToggle" class="dark-mode-toggle">Dark Mode</button>
+    </header>
+    <div id="container">
+        <div id="leftContainer">
+            <div id="searchContainer">
+                <input type="text" id="searchField" placeholder="Search for docs..." oninput="filterDocuments()">
+            </div>
+            <div id="treeContainer">
+                <!-- Document tree will be populated here -->
+            </div>
+        </div>
+        <div id="editorContainer">
+            <input type="text" id="nameField" placeholder="Enter document name">
+            <div id="editor"></div>
+            <div id="outgoingLinks"></div>
+            <div id="incomingLinks"></div>
+            <div id="timeUpdated"></div>
+            <div id="buttons">
+                <button id="saveBtn">Save</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
